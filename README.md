@@ -1,4 +1,4 @@
-# Bike Store - Flutter App
+# Bike Store - Public Resources
 
 > Bike Store for Full Stack Practice
 
