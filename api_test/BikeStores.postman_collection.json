@@ -1,0 +1,2169 @@
+{
+	"info": {
+		"_postman_id": "5095c732-297b-4ef8-8fb1-832d8e659d35",
+		"name": "BikeStores",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "common",
+			"item": [
+				{
+					"name": "customer login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"Shuna@smail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/customerLogin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"customerLogin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "staff login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"izawa_sizue@smail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/staffLogin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"staffLogin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "production",
+			"item": [
+				{
+					"name": "brand",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Giant",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/brand/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"brand",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/brand/2",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"brand",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customerToken}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{customerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/brands?size=10&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"brands"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Slime",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/brand/update/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"brand",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/brand/delete/11",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"brand",
+										"delete",
+										"11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/brands/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"brands",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "category",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Bike",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/category/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/category/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/categories?size=50&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"categories"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "50"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Book",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/category/update/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/category/delete/8",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"category",
+										"delete",
+										"8"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/categories/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"categories",
+										"all"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "product",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customerToken}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{customerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Small Bike",
+											"type": "text"
+										},
+										{
+											"key": "model_year",
+											"value": "2020",
+											"type": "text"
+										},
+										{
+											"key": "list_price",
+											"value": "12",
+											"type": "text"
+										},
+										{
+											"key": "brand_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "category_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/product/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/product/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/products?size=10&page=0&model_year=2016",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "model_year",
+											"value": "2016"
+										},
+										{
+											"key": "brand_id",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "keyword",
+											"value": "Surly",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Big Bike",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/product/update/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/product/delete/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"product",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "stock",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "quantity",
+											"value": "21",
+											"type": "text"
+										},
+										{
+											"key": "store_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "product_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/stock/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stock",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/stock/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stock",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/stocks?size=5&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stocks"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "quantity",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/stock/update/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stock",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/stock/delete/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stock",
+										"delete",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find by product or store",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/stocks?size=10&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stocks"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "10"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "product_id",
+											"value": "1",
+											"disabled": true
+										},
+										{
+											"key": "store_id",
+											"value": "2",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sales",
+			"item": [
+				{
+					"name": "store",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/store/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"store",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{customerToken}}",
+											"type": "string"
+										},
+										{
+											"key": "password",
+											"value": "{{customerToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/store/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"store",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/stores?size=2&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stores"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "2"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/stores/all",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"stores",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant_",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000111",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test2@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/store/update/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"store",
+										"update",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/store/delete/4",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"store",
+										"delete",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "staff",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "井沢",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "静江",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "izawa_sizue@smail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "886979585111",
+											"type": "text"
+										},
+										{
+											"key": "active",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "store_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "manager_id",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/staff/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"staff",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/staff/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"staff",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/staffs?size=5&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"staffs"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "いざわ",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "しずえ",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/staff/update/7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"staff",
+										"update",
+										"7"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/staff/delete/6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"staff",
+										"delete",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "朱菜",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "Shuna",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "Shuna@smail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "886979585111",
+											"type": "text"
+										},
+										{
+											"key": "steet",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "ジュラ・テンペスト連邦国",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "JT",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/customer/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"customer",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/customer/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"customer",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/customers?size=5&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "千本木",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "彩花",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/customer/update/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"customer",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/customer/delete/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"customer",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "order",
+					"item": [
+						{
+							"name": "create [fake]",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_status",
+											"value": "Pending",
+											"type": "text"
+										},
+										{
+											"key": "order_date",
+											"value": "2020-01-01 12:11:10",
+											"type": "text"
+										},
+										{
+											"key": "required_date",
+											"value": "2020-01-02 12:12:10",
+											"type": "text"
+										},
+										{
+											"key": "shipped_date",
+											"value": "2020-01-03 12:13:10",
+											"type": "text"
+										},
+										{
+											"key": "customer_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "store_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "staff_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/order/fake/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"order",
+										"fake",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"order_status\": \"Pending\",\r\n    \"order_date\": \"2020-01-01 12:11:10\",\r\n    \"required_date\": \"2020-01-01 12:11:10\",\r\n    \"shippedd_ate\": \"2020-01-01 12:11:10\",\r\n    \"customer_id\": 1,\r\n    \"store_id\": 1,\r\n    \"staff_id\": 1,\r\n    \"order_items\": [\r\n        {\r\n            \"quantity\": 1,\r\n            \"listPrice\": 1,\r\n            \"discount\": 0.2,\r\n            \"productId\": 1\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"listPrice\": 2,\r\n            \"discount\": 0.2,\r\n            \"productId\": 3\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"listPrice\": 20,\r\n            \"discount\": 0.2,\r\n            \"productId\": 4\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/order/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"order",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/order/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"order",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/orders?size=5&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_status",
+											"value": "Processing",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/order/update/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"order",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/order/delete/3",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"order",
+										"delete",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "order_item",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "order_id",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "list_price",
+											"value": "1",
+											"type": "text"
+										},
+										{
+											"key": "discount",
+											"value": "0.2",
+											"type": "text"
+										},
+										{
+											"key": "product_id",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/orderItem/create",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orderItem",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get by id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/orderItem/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orderItem",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "find pageable list",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{url}}/orderItems?size=5&page=0",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orderItems"
+									],
+									"query": [
+										{
+											"key": "size",
+											"value": "5"
+										},
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "quantity",
+											"value": "888",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/orderItem/update/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orderItem",
+										"update",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "store_name",
+											"value": "Giant",
+											"type": "text"
+										},
+										{
+											"key": "phone",
+											"value": "0979000000",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "street",
+											"value": "Slime St.",
+											"type": "text"
+										},
+										{
+											"key": "city",
+											"value": "Rimuru City",
+											"type": "text"
+										},
+										{
+											"key": "state",
+											"value": "TS",
+											"description": "Tempest State",
+											"type": "text"
+										},
+										{
+											"key": "zip_code",
+											"value": "324",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/orderItem/delete/6",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"orderItem",
+										"delete",
+										"6"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8082"
+		},
+		{
+			"key": "customerToken",
+			"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoZW50aWNhdGlvbiIsImlzcyI6IsODwrHCtW_CqsOMIiwiaWQiOjEwLCJ0eXBlIjoiU1RBRkYiLCJleHAiOjE2MTM5MjQyNTAsImVtYWlsIjoiU2h1bmFAc21haWwuY29tIn0.XuzzFiNtYHGZ1LloqsLi-zEqrkwVwbptCtAnusoWGC2izA04ecSmEkEk575QetCsy4PNWYuIcUbaG_P3cZOJdQ"
+		}
+	]
+}
