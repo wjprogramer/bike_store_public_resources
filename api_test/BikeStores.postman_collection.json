@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "common",
+			"name": "auth",
 			"item": [
 				{
 					"name": "customer login",
@@ -32,7 +32,56 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "customer login - 2000",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"Shuna@smail.com\",\r\n    \"password\": \"123456\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/customerLogin",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"customerLogin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Content-Length",
+									"value": "325"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"result\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJBdXRoZW50aWNhdGlvbiIsImF1ZCI6Imp3dC1hdWRpZW5jZSIsImlzcyI6ImpheV93dSIsImlkIjoxLCJ0eXBlIjoiU1RBRkYiLCJleHAiOjE2MTY4OTU0NDksImVtYWlsIjoiU2h1bmFAc21haWwuY29tIn0.0T6RFvC6SFdQo7-hEQ7-117nvUQPF8Tw06VrPg1YGRZ9tOlo7MEVSvCfEsq_iifzMSR0Zuz9f1aFYo-flr9fGQ\",\n    \"code\": 2000\n}"
+						}
+					]
 				},
 				{
 					"name": "staff login",
@@ -74,14 +123,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Giant",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Giant\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/brand/create",
@@ -98,24 +146,17 @@
 						},
 						{
 							"name": "get by id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
-									"raw": "{{url}}/brand/2",
+									"raw": "{{url}}/brand/4",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"brand",
-										"2"
+										"4"
 									]
 								}
 							},
@@ -123,9 +164,6 @@
 						},
 						{
 							"name": "find pageable list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -144,10 +182,6 @@
 								},
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/brands?size=10&page=0",
 									"host": [
@@ -176,24 +210,23 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Slime",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Slime\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
-									"raw": "{{url}}/brand/update/1",
+									"raw": "{{url}}/brand/update/4",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"brand",
 										"update",
-										"1"
+										"4"
 									]
 								}
 							},
@@ -204,10 +237,6 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/brand/delete/11",
 									"host": [
@@ -224,16 +253,9 @@
 						},
 						{
 							"name": "find all",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/brands/all",
 									"host": [
@@ -258,14 +280,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Bike",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Bike\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/category/create",
@@ -282,24 +303,17 @@
 						},
 						{
 							"name": "get by id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
-									"raw": "{{url}}/category/1",
+									"raw": "{{url}}/category/10",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"category",
-										"1"
+										"10"
 									]
 								}
 							},
@@ -307,16 +321,9 @@
 						},
 						{
 							"name": "find pageable list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/categories?size=50&page=0",
 									"host": [
@@ -345,24 +352,23 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Book",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Book2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
-									"raw": "{{url}}/category/update/1",
+									"raw": "{{url}}/category/update/10",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"category",
 										"update",
-										"1"
+										"10"
 									]
 								}
 							},
@@ -373,47 +379,6 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "store_name",
-											"value": "Giant",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "0979000000",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "test@gmail.com",
-											"type": "text"
-										},
-										{
-											"key": "street",
-											"value": "Slime St.",
-											"type": "text"
-										},
-										{
-											"key": "city",
-											"value": "Rimuru City",
-											"type": "text"
-										},
-										{
-											"key": "state",
-											"value": "TS",
-											"description": "Tempest State",
-											"type": "text"
-										},
-										{
-											"key": "zip_code",
-											"value": "324",
-											"type": "text"
-										}
-									]
-								},
 								"url": {
 									"raw": "{{url}}/category/delete/8",
 									"host": [
@@ -430,16 +395,9 @@
 						},
 						{
 							"name": "find all",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/categories/all",
 									"host": [
@@ -479,34 +437,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Small Bike",
-											"type": "text"
-										},
-										{
-											"key": "model_year",
-											"value": "2020",
-											"type": "text"
-										},
-										{
-											"key": "list_price",
-											"value": "12",
-											"type": "text"
-										},
-										{
-											"key": "brand_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "category_id",
-											"value": "1",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Small Bike\",\r\n    \"model_year\": 2020,\r\n    \"list_price\": 12,\r\n    \"brand_id\": 1,\r\n    \"category_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/product/create",
@@ -523,16 +460,9 @@
 						},
 						{
 							"name": "get by id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/product/1",
 									"host": [
@@ -548,18 +478,11 @@
 						},
 						{
 							"name": "find pageable list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
-									"raw": "{{url}}/products?size=10&page=0&model_year=2016",
+									"raw": "{{url}}/products?size=2&page=0&brand_id=1&keyword=small",
 									"host": [
 										"{{url}}"
 									],
@@ -569,7 +492,7 @@
 									"query": [
 										{
 											"key": "size",
-											"value": "10"
+											"value": "2"
 										},
 										{
 											"key": "page",
@@ -577,17 +500,16 @@
 										},
 										{
 											"key": "model_year",
-											"value": "2016"
+											"value": "2016",
+											"disabled": true
 										},
 										{
 											"key": "brand_id",
-											"value": "1",
-											"disabled": true
+											"value": "1"
 										},
 										{
 											"key": "keyword",
-											"value": "Surly",
-											"disabled": true
+											"value": "small"
 										}
 									]
 								}
@@ -600,14 +522,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "name",
-											"value": "Big Bike",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Big Bike\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/product/update/1",
@@ -628,47 +549,6 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "store_name",
-											"value": "Giant",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "0979000000",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "test@gmail.com",
-											"type": "text"
-										},
-										{
-											"key": "street",
-											"value": "Slime St.",
-											"type": "text"
-										},
-										{
-											"key": "city",
-											"value": "Rimuru City",
-											"type": "text"
-										},
-										{
-											"key": "state",
-											"value": "TS",
-											"description": "Tempest State",
-											"type": "text"
-										},
-										{
-											"key": "zip_code",
-											"value": "324",
-											"type": "text"
-										}
-									]
-								},
 								"url": {
 									"raw": "{{url}}/product/delete/3",
 									"host": [
@@ -694,24 +574,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "quantity",
-											"value": "21",
-											"type": "text"
-										},
-										{
-											"key": "store_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "product_id",
-											"value": "1",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"quantity\": 21,\r\n    \"store_id\": 2,\r\n    \"product_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/stock/create",
@@ -728,16 +597,9 @@
 						},
 						{
 							"name": "get by id",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/stock/1",
 									"host": [
@@ -753,16 +615,9 @@
 						},
 						{
 							"name": "find pageable list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/stocks?size=5&page=0",
 									"host": [
@@ -791,14 +646,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "quantity",
-											"value": "123",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"quantity\": 123\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/stock/update/1",
@@ -819,47 +673,6 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "store_name",
-											"value": "Giant",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "0979000000",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "test@gmail.com",
-											"type": "text"
-										},
-										{
-											"key": "street",
-											"value": "Slime St.",
-											"type": "text"
-										},
-										{
-											"key": "city",
-											"value": "Rimuru City",
-											"type": "text"
-										},
-										{
-											"key": "state",
-											"value": "TS",
-											"description": "Tempest State",
-											"type": "text"
-										},
-										{
-											"key": "zip_code",
-											"value": "324",
-											"type": "text"
-										}
-									]
-								},
 								"url": {
 									"raw": "{{url}}/stock/delete/1",
 									"host": [
@@ -876,16 +689,9 @@
 						},
 						{
 							"name": "find by product or store",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/stocks?size=10&page=0",
 									"host": [
@@ -934,45 +740,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "store_name",
-											"value": "Giant",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "0979000000",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "test@gmail.com",
-											"type": "text"
-										},
-										{
-											"key": "street",
-											"value": "Slime St.",
-											"type": "text"
-										},
-										{
-											"key": "city",
-											"value": "Rimuru City",
-											"type": "text"
-										},
-										{
-											"key": "state",
-											"value": "TS",
-											"description": "Tempest State",
-											"type": "text"
-										},
-										{
-											"key": "zip_code",
-											"value": "324",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"store_name\": \"Giant\",\r\n    \"phone\": \"0979000000\",\r\n    \"email\": \"test@gmail.com\",\r\n    \"street\": \"Slime St.\",\r\n    \"city\": \"Rimuru City\",\r\n    \"state\": \"TS\",\r\n    \"zip_code\": \"324\",\r\n\r\n    \"postman_comment\": \"TS for Tempest State\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/store/create",
@@ -1217,50 +991,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "first_name",
-											"value": "井沢",
-											"type": "text"
-										},
-										{
-											"key": "last_name",
-											"value": "静江",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "izawa_sizue@smail.com",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "123456",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "886979585111",
-											"type": "text"
-										},
-										{
-											"key": "active",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "store_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "manager_id",
-											"value": "1",
-											"type": "text",
-											"disabled": true
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"井沢\",\r\n    \"last_name\": \"静江\",\r\n    \"email\": \"izawa_sizue9@smail.com\",\r\n    \"password\": \"123456\",\r\n    \"phone\": \"886979585111\",\r\n    \"active\": 1,\r\n    \"store_id\": 1,\r\n    \"manager_id\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/staff/create",
@@ -1365,6 +1102,11 @@
 										{
 											"key": "page",
 											"value": "0"
+										},
+										{
+											"key": "store_id",
+											"value": "1",
+											"disabled": true
 										}
 									]
 								}
@@ -1476,54 +1218,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "first_name",
-											"value": "朱菜",
-											"type": "text"
-										},
-										{
-											"key": "last_name",
-											"value": "Shuna",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "Shuna@smail.com",
-											"type": "text"
-										},
-										{
-											"key": "password",
-											"value": "123456",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "886979585111",
-											"type": "text"
-										},
-										{
-											"key": "steet",
-											"value": "Slime St.",
-											"type": "text"
-										},
-										{
-											"key": "city",
-											"value": "Rimuru City",
-											"type": "text"
-										},
-										{
-											"key": "state",
-											"value": "ジュラ・テンペスト連邦国",
-											"type": "text"
-										},
-										{
-											"key": "zip_code",
-											"value": "JT",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"first_name\": \"朱菜\",\r\n    \"last_name\": \"Shuna\",\r\n    \"email\": \"Shuna@smail.com\",\r\n    \"password\": \"123456\",\r\n    \"phone\": \"886979585111\",\r\n    \"street\": \"Slime St.\",\r\n    \"city\": \"Rimuru City\",\r\n    \"state\": \"ジュラ・テンペスト連邦国\",\r\n    \"zip_code\": \"JT\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/customer/create",
@@ -1591,6 +1292,11 @@
 										{
 											"key": "page",
 											"value": "0"
+										},
+										{
+											"key": "keyword",
+											"value": "",
+											"disabled": true
 										}
 									]
 								}
@@ -1697,72 +1403,13 @@
 					"name": "order",
 					"item": [
 						{
-							"name": "create [fake]",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "order_status",
-											"value": "Pending",
-											"type": "text"
-										},
-										{
-											"key": "order_date",
-											"value": "2020-01-01 12:11:10",
-											"type": "text"
-										},
-										{
-											"key": "required_date",
-											"value": "2020-01-02 12:12:10",
-											"type": "text"
-										},
-										{
-											"key": "shipped_date",
-											"value": "2020-01-03 12:13:10",
-											"type": "text"
-										},
-										{
-											"key": "customer_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "store_id",
-											"value": "1",
-											"type": "text"
-										},
-										{
-											"key": "staff_id",
-											"value": "1",
-											"type": "text"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{url}}/order/fake/create",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"order",
-										"fake",
-										"create"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "create",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"order_status\": \"Pending\",\r\n    \"order_date\": \"2020-01-01 12:11:10\",\r\n    \"required_date\": \"2020-01-01 12:11:10\",\r\n    \"shippedd_ate\": \"2020-01-01 12:11:10\",\r\n    \"customer_id\": 1,\r\n    \"store_id\": 1,\r\n    \"staff_id\": 1,\r\n    \"order_items\": [\r\n        {\r\n            \"quantity\": 1,\r\n            \"listPrice\": 1,\r\n            \"discount\": 0.2,\r\n            \"productId\": 1\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"listPrice\": 2,\r\n            \"discount\": 0.2,\r\n            \"productId\": 3\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"listPrice\": 20,\r\n            \"discount\": 0.2,\r\n            \"productId\": 4\r\n        }\r\n    ]\r\n}",
+									"raw": "{\r\n    \"order_status\": \"Pending\",\r\n    \"order_date\": \"2020-01-01 12:11:10\",\r\n    \"required_date\": \"2020-01-01 12:11:10\",\r\n    \"shipped_date\": \"2020-01-01 12:11:10\",\r\n    \"customer_id\": 1,\r\n    \"store_id\": 1,\r\n    \"staff_id\": 1,\r\n    \"order_items\": [\r\n        {\r\n            \"quantity\": 1,\r\n            \"list_price\": 1,\r\n            \"discount\": 0.2,\r\n            \"product_id\": 1\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"list_price\": 1,\r\n            \"discount\": 0.2,\r\n            \"product_id\": 2\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"list_price\": 1,\r\n            \"discount\": 0.2,\r\n            \"product_id\": 3\r\n        }\r\n    ]\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -1820,7 +1467,7 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/orders?size=5&page=0",
+									"raw": "{{url}}/orders?size=5&page=0&store_id=2",
 									"host": [
 										"{{url}}"
 									],
@@ -1835,6 +1482,15 @@
 										{
 											"key": "page",
 											"value": "0"
+										},
+										{
+											"key": "order_status",
+											"value": "Rejected",
+											"disabled": true
+										},
+										{
+											"key": "store_id",
+											"value": "2"
 										}
 									]
 								}
@@ -1847,14 +1503,13 @@
 								"method": "POST",
 								"header": [],
 								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "order_status",
-											"value": "Processing",
-											"type": "text"
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 26,\r\n    \"order_status\": \"Rejected\",\r\n    \"order_date\": \"2020-01-01 12:11:10\",\r\n    \"required_date\": \"2020-01-01 12:11:10\",\r\n    \"shipped_date\": \"2020-01-01 12:11:10\",\r\n    \"customer_id\": 2,\r\n    \"store_id\": 2,\r\n    \"staff_id\": 2,\r\n    \"order_items\": [\r\n        {\r\n            \"id\": 1,\r\n            \"quantity\": 20,\r\n            \"list_price\": 20,\r\n            \"discount\": 2.2,\r\n            \"product_id\": 2\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"list_price\": 1,\r\n            \"discount\": 0.2,\r\n            \"product_id\": 2\r\n        },\r\n        {\r\n            \"quantity\": 1,\r\n            \"list_price\": 1,\r\n            \"discount\": 0.2,\r\n            \"product_id\": 3\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
 										}
-									]
+									}
 								},
 								"url": {
 									"raw": "{{url}}/order/update/1",
@@ -1917,14 +1572,14 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/order/delete/3",
+									"raw": "{{url}}/order/delete/24",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
 										"order",
 										"delete",
-										"3"
+										"24"
 									]
 								}
 							},
@@ -1936,7 +1591,7 @@
 					"name": "order_item",
 					"item": [
 						{
-							"name": "create",
+							"name": "create (don't use)",
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -1996,13 +1651,15 @@
 									"formdata": []
 								},
 								"url": {
-									"raw": "{{url}}/orderItem/1",
+									"raw": "{{url}}/order/26/item/12",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"orderItem",
-										"1"
+										"order",
+										"26",
+										"item",
+										"12"
 									]
 								}
 							},
@@ -2010,16 +1667,9 @@
 						},
 						{
 							"name": "find pageable list",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": []
-								},
 								"url": {
 									"raw": "{{url}}/orderItems?size=5&page=0",
 									"host": [
@@ -2058,14 +1708,16 @@
 									]
 								},
 								"url": {
-									"raw": "{{url}}/orderItem/update/1",
+									"raw": "{{url}}/order/26/item/12/update",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"orderItem",
-										"update",
-										"1"
+										"order",
+										"26",
+										"item",
+										"12",
+										"update"
 									]
 								}
 							},
@@ -2076,56 +1728,17 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "store_name",
-											"value": "Giant",
-											"type": "text"
-										},
-										{
-											"key": "phone",
-											"value": "0979000000",
-											"type": "text"
-										},
-										{
-											"key": "email",
-											"value": "test@gmail.com",
-											"type": "text"
-										},
-										{
-											"key": "street",
-											"value": "Slime St.",
-											"type": "text"
-										},
-										{
-											"key": "city",
-											"value": "Rimuru City",
-											"type": "text"
-										},
-										{
-											"key": "state",
-											"value": "TS",
-											"description": "Tempest State",
-											"type": "text"
-										},
-										{
-											"key": "zip_code",
-											"value": "324",
-											"type": "text"
-										}
-									]
-								},
 								"url": {
-									"raw": "{{url}}/orderItem/delete/6",
+									"raw": "{{url}}/order/26/item/1/delete",
 									"host": [
 										"{{url}}"
 									],
 									"path": [
-										"orderItem",
-										"delete",
-										"6"
+										"order",
+										"26",
+										"item",
+										"1",
+										"delete"
 									]
 								}
 							},
