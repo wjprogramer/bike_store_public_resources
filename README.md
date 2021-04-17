@@ -9,8 +9,8 @@ Put some assets, source url, licenses of assets and others
 - Public Resources (here)
 - [Backend - Main - Server - Ktor](https://github.com/wjprogramer/bike_store_server)
 - [Frontend - Client - Mobile - Flutter](https://github.com/wjprogramer/bike_store_mobile_flutter)
-- [Frontend - Client - Web - React JS](https://github.com/wjprogramer/bike_store_web_react)
-- [Frontend - Admin - Web - React JS](https://github.com/wjprogramer/bike_store_admin_web_react)
+- Frontend - Client - Focus Web - Flutter (Not Created)
+- [Frontend - Admin - Focus Web - Flutter](https://github.com/wjprogramer/bike_store_admin_flutter)
 
 ## References
 
